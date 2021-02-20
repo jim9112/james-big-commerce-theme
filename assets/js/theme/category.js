@@ -11,14 +11,14 @@ export default class Category extends CatalogPage {
   }
 
   onReady() {
-    // added by me
+    // added by James
 
     // add event listener to add all button
     document.querySelector('.addAllToCart').addEventListener('click', () => {
       const productList = this.context.currentCategoryProducts;
       this.addAllProducts(productList);
     });
-    // end added by me
+    // end added by James
 
     $('[data-button-type="add-cart"]').on('click', (e) => {
       $(e.currentTarget).next().attr({
@@ -46,22 +46,33 @@ export default class Category extends CatalogPage {
     this.ariaNotifyNoProducts();
   }
 
-  //   added by me
+  //   added by James
+
+  //   add all projects to users shopping cart
   addAllProducts(products) {
     console.log(products);
-    products.forEach((product) => {
+    products.forEach((product, index) => {
       fetch(`/cart.php?action=add&product_id=${product.id}`, {
         method: 'POST',
-      }).catch((err) => console.error(err));
+      })
+        .then(() => {
+          if (index === products.length - 1) {
+            location.reload();
+            return false;
+          }
+        })
+        .catch((err) => console.error(err));
     });
   }
 
+  //   get shopping cart info from api
   getCartContents() {
     fetch('/api/storefront/carts')
       .then((res) => res.json())
       .then((data) => console.log(data));
   }
-  // end added by me
+
+  // end added by James
 
   ariaNotifyNoProducts() {
     const $noProductsMessage = $('[data-no-products-notification]');
