@@ -12,9 +12,9 @@ export default class Category extends CatalogPage {
 
   onReady() {
     // added by me
-    console.log('test');
-    const addAllButton = document.querySelector('.addAllToCart');
-    addAllButton.addEventListener('click', () => {
+
+    // add event listener to add all button
+    document.querySelector('.addAllToCart').addEventListener('click', () => {
       const productList = this.context.currentCategoryProducts;
       this.addAllProducts(productList);
     });
@@ -50,8 +50,16 @@ export default class Category extends CatalogPage {
   addAllProducts(products) {
     console.log(products);
     products.forEach((product) => {
-      $.get(`/cart.php?action=add&product_id=${product.id}`);
+      fetch(`/cart.php?action=add&product_id=${product.id}`, {
+        method: 'POST',
+      }).catch((err) => console.error(err));
     });
+  }
+
+  getCartContents() {
+    fetch('/api/storefront/carts')
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   }
   // end added by me
 
