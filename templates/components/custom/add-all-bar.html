@@ -1,12 +1,22 @@
-<div>
+<div class="customButtonContainer">
   <style>
-    .addAllToCart {
+    .customButtonContainer {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .customButton {
       border: 1px solid black;
       border-radius: 5px;
     }
   </style>
-  <button class="addAllToCart" type="button">Add all to cart</button>
+  <button class="addAllToCart customButton" type="button">
+    Add all to cart
+  </button>
   {{#if customer.name}}
-  <button class="" type="button">Remove all from cart</button>
+  <button class="deleteCart customButton" type="button">
+    Remove all from cart
+  </button>
   {{/if}}
 </div>

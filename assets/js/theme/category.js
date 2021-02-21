@@ -12,12 +12,28 @@ export default class Category extends CatalogPage {
 
   onReady() {
     // added by James
+    const productList = this.context.currentCategoryProducts;
 
     // add event listener to add all button
     document.querySelector('.addAllToCart').addEventListener('click', () => {
-      const productList = this.context.currentCategoryProducts;
       this.addAllProducts(productList);
     });
+
+    // add event listener to delete cart
+    document.querySelector('.deleteCart').addEventListener('click', () => {
+      this.deleteCartContents();
+    });
+
+    // add event listener for image
+    document.querySelectorAll('.card-image').forEach((picture, index) => {
+      picture.addEventListener('mouseover', (e) => {
+        const thumbNail = e.target;
+        const picList = productList[index].images;
+        console.log(picList);
+        thumbNail.src = picList[1].data;
+      });
+    });
+
     // end added by James
 
     $('[data-button-type="add-cart"]').on('click', (e) => {
@@ -66,10 +82,16 @@ export default class Category extends CatalogPage {
   }
 
   //   get shopping cart info from api
-  getCartContents() {
-    fetch('/api/storefront/carts')
+  deleteCartContents() {
+    let id;
+    fetch('/api/storefront/carts/')
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => (id = data[0].id))
+      .then(() => {
+        fetch(`/api/storefront/carts/${id}`, {
+          method: 'DELETE',
+        });
+      });
   }
 
   // end added by James
