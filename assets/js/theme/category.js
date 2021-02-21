@@ -33,13 +33,7 @@ export default class Category extends CatalogPage {
       .querySelectorAll('.card-img-container')
       .forEach((picture, index) => {
         picture.addEventListener('mouseover', (e) => {
-          const picList = productList[index].images;
-          console.log(e.currentTarget);
-          const imgUrl = picList[1].data;
-          picture.innerHTML = `<img class="card-image layzyautosizes layzyloaded" src="${imgUrl.replace(
-            '{:size}',
-            '500x659'
-          )}">`;
+          this.pictureToggle(picture, index, productList);
         });
       });
 
@@ -128,6 +122,15 @@ export default class Category extends CatalogPage {
       });
   }
 
+  //   toggle picture with mouseover
+  pictureToggle(picture, index, productList) {
+    const picList = productList[index].images;
+    const imgUrl = picList[1].data;
+    picture.innerHTML = `<img class="card-image layzyautosizes layzyloaded" src="${imgUrl.replace(
+      '{:size}',
+      '500x659'
+    )}">`;
+  }
   // end added by James
   //   -------------------------------------------------------------------
   ariaNotifyNoProducts() {
