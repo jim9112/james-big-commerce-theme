@@ -11,9 +11,11 @@ export default class Category extends CatalogPage {
   }
 
   onReady() {
+    //   ------------------------------------------------------------------------
     // added by James
     const productList = this.context.currentCategoryProducts;
 
+    // set visibility of delete all button
     this.deleteButtonToggle();
 
     // add event listener to add all button
@@ -36,7 +38,15 @@ export default class Category extends CatalogPage {
       });
     });
 
+    // event listener for custom alert close button
+    document
+      .querySelector('.customCloseButton')
+      .addEventListener('click', () => {
+        location.reload();
+        return false;
+      });
     // end added by James
+    // -----------------------------------------------------------------------------
 
     $('[data-button-type="add-cart"]').on('click', (e) => {
       $(e.currentTarget).next().attr({
@@ -75,8 +85,9 @@ export default class Category extends CatalogPage {
       })
         .then(() => {
           if (index === products.length - 1) {
-            location.reload();
-            return false;
+            document
+              .querySelector('.customAlert')
+              .classList.remove('customHidden');
           }
         })
         .catch((err) => console.error(err));
@@ -93,6 +104,7 @@ export default class Category extends CatalogPage {
         fetch(`/api/storefront/carts/${id}`, {
           method: 'DELETE',
         });
+        document.querySelector('.customAlert').classList.remove('customHidden');
       });
   }
 
