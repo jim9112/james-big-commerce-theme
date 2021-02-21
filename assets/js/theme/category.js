@@ -14,6 +14,8 @@ export default class Category extends CatalogPage {
     // added by James
     const productList = this.context.currentCategoryProducts;
 
+    this.deleteButtonToggle();
+
     // add event listener to add all button
     document.querySelector('.addAllToCart').addEventListener('click', () => {
       this.addAllProducts(productList);
@@ -91,6 +93,20 @@ export default class Category extends CatalogPage {
         fetch(`/api/storefront/carts/${id}`, {
           method: 'DELETE',
         });
+      });
+  }
+
+  //   set button state for delete all button
+  deleteButtonToggle() {
+    fetch('/api/storefront/carts/')
+      .then((res) => res.json())
+      .then((data) => {
+        const deleteButton = document.querySelector('.deleteCart');
+        if (data.length === 0) {
+          deleteButton.classList.add('customHidden');
+        } else {
+          deleteButton.classList.remove('customHidden');
+        }
       });
   }
 
