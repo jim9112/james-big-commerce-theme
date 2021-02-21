@@ -74,6 +74,7 @@ export default class Category extends CatalogPage {
     this.ariaNotifyNoProducts();
   }
 
+  //   --------------------------------------------------------------
   //   added by James
 
   //   add all projects to users shopping cart
@@ -123,7 +124,7 @@ export default class Category extends CatalogPage {
   }
 
   // end added by James
-
+  //   -------------------------------------------------------------------
   ariaNotifyNoProducts() {
     const $noProductsMessage = $('[data-no-products-notification]');
     if ($noProductsMessage.length) {
