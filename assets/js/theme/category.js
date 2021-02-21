@@ -81,7 +81,7 @@ export default class Category extends CatalogPage {
     });
   }
 
-  //   get shopping cart info from api
+  //   delete shopping cart and contents
   deleteCartContents() {
     let id;
     fetch('/api/storefront/carts/')
