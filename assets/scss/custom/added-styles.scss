@@ -1,0 +1,17 @@
+.customer-banner {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.customButtonContainer {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  gap: 2rem;
+}
+.customButton {
+  border: 1px solid black;
+  border-radius: 5px;
+}

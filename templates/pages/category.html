@@ -19,9 +19,7 @@ category.id}} {{#partial "head"}} {{#if pagination.category.previous}}
 {{/if}} {{/partial}} {{#partial "page"}}
 
 <!-- customer data added by me -->
-{{#if customer.name}}
-<div><p>{{customer.name}}</p></div>
-{{/if}}
+{{#if customer.name}} {{> components/custom/customer-banner}} {{/if}}
 
 <!-- end customer data added by me -->
 
