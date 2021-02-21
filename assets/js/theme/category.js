@@ -29,14 +29,19 @@ export default class Category extends CatalogPage {
     });
 
     // add event listener for image
-    document.querySelectorAll('.card-image').forEach((picture, index) => {
-      picture.addEventListener('mouseover', (e) => {
-        const thumbNail = e.target;
-        const picList = productList[index].images;
-        console.log(picList);
-        thumbNail.src = picList[1].data;
+    document
+      .querySelectorAll('.card-img-container')
+      .forEach((picture, index) => {
+        picture.addEventListener('mouseover', (e) => {
+          const picList = productList[index].images;
+          console.log(e.currentTarget);
+          const imgUrl = picList[1].data;
+          picture.innerHTML = `<img class="card-image layzyautosizes layzyloaded" src="${imgUrl.replace(
+            '{:size}',
+            '500x659'
+          )}">`;
+        });
       });
-    });
 
     // event listener for custom alert close button
     document
