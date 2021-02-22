@@ -13,7 +13,7 @@ This test was broken up into three majortasks:
 
 - Added the new category and item along with product details and pictures via the BigCommerce store web portal
 
-- Added event listener to the thumbnail container on the category page via stencil. This was accomplished by edditing the [category.js](./assets/js/theme/categoty.js) file
+- Added event listener to the thumbnail container on the category page via stencil. This was accomplished by edditing the [category.js](assets/js/theme/category.js) file
 
 ---
 
