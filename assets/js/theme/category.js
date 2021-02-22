@@ -41,6 +41,7 @@ export default class Category extends CatalogPage {
     document
       .querySelector('.customCloseButton')
       .addEventListener('click', () => {
+        document.querySelector('.customAlert').classList.add('customHidden');
         location.reload();
         return false;
       });
