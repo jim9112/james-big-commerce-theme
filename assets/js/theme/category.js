@@ -14,7 +14,6 @@ export default class Category extends CatalogPage {
     //   ------------------------------------------------------------------------
     // added by James
     const productList = this.context.currentCategoryProducts;
-
     // set visibility of delete all button
     this.deleteButtonToggle();
 
@@ -24,6 +23,7 @@ export default class Category extends CatalogPage {
     });
 
     // add event listener to delete cart
+
     document.querySelector('.deleteCart').addEventListener('click', () => {
       this.deleteCartContents();
     });
@@ -79,7 +79,6 @@ export default class Category extends CatalogPage {
 
   //   add all projects to users shopping cart
   addAllProducts(products) {
-    console.log(products);
     products.forEach((product, index) => {
       fetch(`/cart.php?action=add&product_id=${product.id}`, {
         method: 'POST',
@@ -88,6 +87,10 @@ export default class Category extends CatalogPage {
           if (index === products.length - 1) {
             document
               .querySelector('.customAlert')
+              .classList.remove('customHidden');
+
+            document
+              .querySelector('.deleteCart')
               .classList.remove('customHidden');
           }
         })
@@ -106,7 +109,9 @@ export default class Category extends CatalogPage {
           method: 'DELETE',
         });
         document.querySelector('.customAlert').classList.remove('customHidden');
-      });
+        document.querySelector('.deleteCart').classList.add('customHidden');
+      })
+      .catch((err) => console.error(err));
   }
 
   //   set button state for delete all button
@@ -120,17 +125,19 @@ export default class Category extends CatalogPage {
         } else {
           deleteButton.classList.remove('customHidden');
         }
-      });
+      })
+      .catch((err) => console.error(err));
   }
 
   //   toggle picture with mouseover
   pictureToggle(picture, index, productList) {
     const picList = productList[index].images;
     const imgUrl = picList[1].data;
+    const imgAlt = picList[1].alt;
     picture.innerHTML = `<img class="card-image layzyautosizes layzyloaded" src="${imgUrl.replace(
       '{:size}',
       '500x659'
-    )}">`;
+    )}" alt="${imgAlt}">`;
   }
   // end added by James
   //   -------------------------------------------------------------------

@@ -1,0 +1,15 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[17],{
+
+/***/ "./assets/js/theme/category.js":
+/*!*************************************!*\
+  !*** ./assets/js/theme/category.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/jameshannan/Desktop/james-big-commerce-theme/assets/js/theme/category.js: Unexpected token (17:25)\n\n\u001b[0m \u001b[90m 15 |\u001b[39m     \u001b[90m// added by James\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 |\u001b[39m     \u001b[36mconst\u001b[39m productList \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mcontext\u001b[33m.\u001b[39mcurrentCategoryProducts\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m     \u001b[36mconst\u001b[39m deleteButton \u001b[33m=\u001b[39m \u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 18 |\u001b[39m     \u001b[90m// set visibility of delete all button\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 19 |\u001b[39m     \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mdeleteButtonToggle()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 20 |\u001b[39m\u001b[0m\n    at Parser._raise (/Users/jameshannan/Desktop/james-big-commerce-theme/node_modules/@babel/parser/lib/index.js:776:17)\n    at Parser.raiseWithData (/Users/jameshannan/Desktop/james-big-commerce-theme/node_modules/@babel/parser/lib/index.js:769:17)\n    at Parser.raise (/Users/jameshannan/Desktop/james-big-commerce-theme/node_modules/@babel/parser/lib/index.js:737:17)\n    at Parser.unexpected (/Users/jameshannan/Desktop/james-big-commerce-theme/node_modules/@babel/parser/lib/index.js:9264:16)\n    at Parser.parseExprAtom (/Users/jameshannan/Desktop/james-big-commerce-theme/node_modules/@babel/parser/lib/index.js:10754:20)\n    at Parser.parseExprSubscripts (/Users/jameshannan/Desktop/james-big-commerce-theme/node_modules/@babel/parser/lib/index.js:10329:23)\n    at Parser.parseUpdate (/Users/jameshannan/Desktop/james-big-commerce-theme/node_modules/@babel/parser/lib/index.js:10309:21)\n    at Parser.parseMaybeUnary (/Users/jameshannan/Desktop/james-big-commerce-theme/node_modules/@babel/parser/lib/index.js:10287:23)\n    at Parser.parseExprOps (/Users/jameshannan/Desktop/james-big-commerce-theme/node_modules/@babel/parser/lib/index.js:10152:23)\n    at Parser.parseMaybeConditional (/Users/jameshannan/Desktop/james-big-commerce-theme/node_modules/@babel/parser/lib/index.js:10126:23)");
+
+/***/ })
+
+}]);
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ0aGVtZS1idW5kbGUuY2h1bmsuMTcuanMiLCJzb3VyY2VSb290IjoiIn0=

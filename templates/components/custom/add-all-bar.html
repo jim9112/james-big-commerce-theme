@@ -2,9 +2,8 @@
   <button class="addAllToCart customButton" type="button">
     Add all to cart
   </button>
-  {{#if customer.name}}
-  <button class="deleteCart customButton" type="button">
+  <button class="deleteCart customButton customHidden" type="button">
     Remove all from cart
   </button>
-  {{/if}} {{> components/custom/add-delete-alert}}
+  {{> components/custom/add-delete-alert}}
 </div>
