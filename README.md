@@ -4,10 +4,18 @@
 
 This test was broken up into three majortasks:
 
-1. Create a product called Special Item which will be assigned to a new category called Special Items. This task included the following sub tasks:
+1. **Create a product called Special Item which will be assigned to a new category called Special Items. This task included the following sub tasks:**
 
 - Add at least 2 images during the product creation.
 - Create a feature that will show the product's second image when it is hovered on.
+
+**Task 1 completion details**
+
+- Added the new category and item along with product details and pictures via the BigCommerce store web portal
+
+- Added event listener to the thumbnail container on the category page via stencil. This was accomplished by edditing the [category.js](./assets/js/theme/categoty.js) file
+
+---
 
 2. Add a button at the top of the category page labeled Add All To Cart and a second button called Remove All Items. This task included the following sub tasks:
 
@@ -18,5 +26,7 @@ This test was broken up into three majortasks:
 - When the Remove All button is clicked it should clear the contents of the cart and notify the user
 
 - Both buttons should utilize the Storefront API for completion.
+
+---
 
 3. If a customer is logged in - at the top of the category page show a banner that shows some customer details (i.e. name, email, phone ,etc). This should utilize the data that is rendered via Handlebars on the Customer Object.
